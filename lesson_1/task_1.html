@@ -1,0 +1,26 @@
+<!-- Домашнее задание к уроку №1 JS-start
+Студент: Максим Сапунов Jenny6199@yandex.ru
+
+Задача №1. Задать температуру в градусах по Цельсию. Вывести alert соответствующую
+температуру в градусах по Фаренгейту.
+Расчет ведется по формуле Tf = (9 / 5) * Tc + 32 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер температур</title>
+</head>
+<body>
+    <script>
+        'use strict';
+         let t_Cl = prompt("Введите температуру в градусах по шкале Цельсия:");
+         // здесь нужно вставить проверку введенных данных, ведь пользователь может ввести что угодно.
+         let t_Fr = (9 / 5) * t_Cl + 32;
+         alert("Заданной температуре соответствует " + t_Fr + " Гр по шкале Фаренгейта.");
+    </script>
+</body>
+</html>
+
