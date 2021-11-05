@@ -1,5 +1,6 @@
 "use strict";
-        
+
+// ES5
 // Создание функции-конструктора для объекта Product
 /**
  * Конструктор объекта Product
@@ -18,10 +19,10 @@ Product.prototype.make25PercentDiscount = function() {
 
 
 // Создание объектов типа Product
-const tovar_1 = new Product('пылесос', 25000);
-const tovar_2 = new Product('шкаф', 18000);
+const position_1 = new Product('пылесос', 25000);
+const position_2 = new Product('шкаф', 18000);
 
 // Использование объекта и метода.
-console.log(tovar_1);
-tovar_1.make25PercentDiscount();
-console.log(tovar_1);
+console.log(position_1);
+position_1.make25PercentDiscount();
+console.log(position_1);
