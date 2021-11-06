@@ -1,3 +1,5 @@
+"use strict";
+
 // Содержит методы анализа ответов игрока.
 let analiser = {
     whatPlayerDo(newQuestion) {
@@ -12,6 +14,8 @@ let analiser = {
             alert('Вы ошиблись. Правильный ответ - ' + newQuestion.right_answer);
             player.mistakes++;
         }
+        // Сохраняем историю заданных вопросов.
+        player.userLog.push(newQuestion);
         return;
     }
 }
