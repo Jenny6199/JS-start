@@ -16,6 +16,15 @@
     -->
 
     <script>
+        'use strict';
+
+        // Создаем элемент добавляем в него содержимое.
+        let insertion = document.createElement('h3');
+        insertion.innerHTML = 'hello world';
+        // Создаем список объектов с тэгами  'div'
+        let div_1 = document.getElementsByTagName('div');
+        // в данном конкретном случае обращаемся к первому тэгу 'div'.
+        div_1[0].appendChild(insertion);
 
     </script>
 </body>
