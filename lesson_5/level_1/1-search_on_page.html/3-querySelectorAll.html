@@ -24,13 +24,15 @@
         </div>
     </div>
 
-    <!-- Задание. Используя поиск по селектору (метод querySelectorAll) найдите только те ссылки с классом .card-link, которые находятся в .card-body
-    и выведите их в консоль. -->
+    <!-- Задание. Используя поиск по селектору (метод querySelectorAll) найдите только те ссылки 
+        с классом .card-link, которые находятся в .card-body и выведите их в консоль. -->
 
     <script>
         "use strict";
 
-        
+        let link = document.querySelectorAll('div[class="card-body"] .card-link');
+        console.log(link);
+
     </script>
 </body>
 
