@@ -13,5 +13,15 @@
     <a href="#">link</a>
     используя метод insertAdjacentHTML.
     -->
+    <script>
+        'use strict';
+
+        // Находим объект.
+        let finded_div = document.querySelector('.menu');
+        // Вставка строки подготовленной как разметка HTML в найденный объект. 
+        finded_div.insertAdjacentHTML("afterbegin",'<a href="#">link</a>');
+        // При использовании данного метода нет необходимости предварительно создавать элемент, как при использовании innerHTML.
+
+    </script>
 </body>
 </html>

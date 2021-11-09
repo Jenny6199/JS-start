@@ -16,7 +16,18 @@
     и aria-label с помощью метода getAttribute. -->
 
     <script>
-        
+        'use strict';
+
+        /* Находим объект (в данном случае он один поэтому сразу
+        можно обратиться к нему в коллекции)*/
+        let finded_button = document.getElementsByTagName('button')[0];
+        // Получаем значения атрибутов с помощью getAtribute (вернется null или "" если атрибута нет)
+        let atribute_1 = finded_button.getAttribute("data-dismiss");
+        let atribute_2 = finded_button.getAttribute("aria-label");
+        // Выводим значения в консоль.
+        console.log(atribute_1, atribute_2);
+
+
     </script>
 </body>
 

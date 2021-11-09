@@ -12,6 +12,26 @@
     data-two="два" с помощью метода setAttribute. -->
 
     <script>
+        'use strict';
+
+        // Находим объект.
+        let title_tag = document.getElementsByTagName('title')[0];
+        // Добавляем атрибуты с помощью setAttribute.
+        title_tag.setAttribute("data-one", "один");
+        title_tag.setAttribute("data-two", "два");
+        // Выводим объект в консоль.
+        console.log(title_tag);
+
+        /* 
+        Вопрос. А так как ниже можно делать?
+        Этот метод "предложила" в IDE, в Developer.mozilla.org он не описан. Погуглил, нашел на другом сайте, попробовал-работает. 
+        По виду он сложнее - больше строк, плюс дополнительная переменная.
+        быть может он для каких то других случаев? или быть может архаизм?
+        */
+        let self_atribute = document.createAttribute("data-three");
+        self_atribute.value = "три";
+        title_tag.attributes.setNamedItem(self_atribute);
+        console.log(title_tag);
 
     </script>
 </body>

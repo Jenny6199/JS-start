@@ -22,6 +22,17 @@
 
     <!-- Задание. Найдите элемент с классом .dropdown-menu и удалите этот класс, используя свойство classList
     у элемента, и метод remove(). -->
-</body>
 
+    <script>
+        'use strict';
+
+        // Находим объект по селектору.
+        let finded_object = document.querySelector('.dropdown-menu');
+        console.log(finded_object.className);
+        // Удаляем класс из объекта с помощью функции remove из прототипа classList.
+        finded_object.classList.remove('dropdown-menu')
+        console.log(finded_object.className);
+
+    </script>
+</body>
 </html>
