@@ -24,10 +24,17 @@
     <script>
         'use strict';
 
-        let warning = document.getElementsByClassName("btn-outline-warning");
-        document.removeChild(warning);
-        let dark = document.getElementsByClassName("btn-outline-dark");
-        document.body.removeChild(dark);
+        // Находим объект 
+        let warning = document.querySelector(".btn-outline-warning");
+        // Находим объект-родитель для данного объекта.
+        let parent_warning = warning.parentNode;
+        // Удаляем объект из родительского объекта
+        parent_warning.removeChild(warning);
+        
+        // Вторую кнопку удаляем по анологии с первой.
+        let dark = document.querySelector(".btn-outline-dark");
+        let parent_dark = dark.parentNode;
+        parent_dark.removeChild(dark);
 
     </script>
 </body>
