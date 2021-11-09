@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         img {
-            width: 100px;
+            width: 200px;
         }
     </style>
 </head>
@@ -23,7 +23,14 @@
     покажите с помощью alert сообщение: "все картинки загружены". -->
 
     <script>
-        
+        'use strict';
+
+        /* В данном примере обращаемся к странице window, событие возникнет
+        только когда будут загружены все элементы */
+        window.addEventListener('load', () => {
+            alert("Все картинки загружены.");
+        });
+
     </script>
 </body>
 </html>

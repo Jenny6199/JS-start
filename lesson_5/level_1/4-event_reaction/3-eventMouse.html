@@ -14,7 +14,14 @@
     alert('клик') -->
 
     <script>
-        
+        'use strict';
+
+        // В данном примере обращаемся к элементу.
+        let aim = document.querySelector('.btn');
+        aim.addEventListener('click', () => {
+            alert('клик');
+        });
+
     </script>
 </body>
 </html>
