@@ -16,5 +16,20 @@
     4. При клике из event.target выведите в консоль: id, имя класса (используйте
     свойство className), текст на кнопке.
     -->
+    <script>
+        'use strict';
+
+
+        let aim_button = document.querySelector('button');
+        aim_button.addEventListener('click', function(event) {
+            let touch = event.target 
+            console.log(touch.id, touch.className, touch.innerText);
+        });
+
+        /* На память: У event, в данном случае, помимо target можно обращаться 
+        к свойствам 'x' и 'y' которые указывают на место в окне 
+        где произошло событие */
+        
+    </script>
 </body>
 </html>

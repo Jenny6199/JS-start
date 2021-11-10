@@ -24,7 +24,15 @@
     объект события, передаваемый в функцию-обработчик клика. -->
 
     <script>
-        
+        'use strict';
+
+        document.querySelector('ul').addEventListener('click', function(event) {
+            console.log(event.target);
+        })
+        /* В данном примере происходит "перехватывание" "всплывающего" события.
+        event.target - будет указывать на объект на котором произошло событие,
+        (в данном примере это button), а
+        event.currentTarget - будет указывать на текущий объект (ul).*/
     </script>
 </body>
 </html>

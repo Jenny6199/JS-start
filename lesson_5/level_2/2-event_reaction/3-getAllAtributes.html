@@ -21,5 +21,18 @@
     3. При клике из event.target c помощью getAttribute() получите значение
     каждого атрибута и выведите в консоль.
     -->
+    <script>
+        'use stirct';
+
+        let block = document.querySelector('div');
+        block.addEventListener('click', function(event) {
+            /* Обращаемся к списку атрибутов найденного объекта, затем
+            перебираем их в цикле и обращаясь к каждому элементу по
+            свойству name выводим их значение с помощью getAttribute() */
+            for (elem of event.target.attributes) {
+                console.log(block.getAttribute(elem.name));
+            }
+        })
+    </script>
 </body>
 </html>
