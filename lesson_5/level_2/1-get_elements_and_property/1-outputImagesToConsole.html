@@ -16,5 +16,25 @@
     и выведите каждую картинку в консоль. Выведите в консоль только
 	элементы коллекции, не нужно пытаться сделать, чтобы в консоли
 	появилось изображение. -->
+
+    <script>
+        'use strict';
+
+        /*  В отличие от getElementByTagName, querySelectorAll
+        возвращает NodeList в прототипе которого имеется forEach() */
+        let images = document.querySelectorAll('img');
+        images.forEach((elem) => {
+            console.log(elem);
+        });
+
+        console.log('\n---------------\n');
+
+        /* Второй вариант с использованием цикла */
+        let images_2 = document.getElementsByTagName('img');
+        for(let elem of images_2){
+            console.log(elem);
+        };
+
+    </script>
 </body>
 </html>

@@ -16,7 +16,23 @@
      -->
 
     <script>
-        
+        'use strict';
+
+        /* Сохраняем в переменную результат метода querySelector
+        (DOMTokenList) и далее обращаемся к его свойству classList.
+        Далее перебираем эти элементы с помощью forEach */
+        let finded_div = document.querySelector('div');
+        let classes = finded_div.classList;
+        classes.forEach(elem => {console.log(elem)});
+
+        console.log('\n----------\n');
+
+        /* Вопрос:
+        Не будет ли ошибкой оформления если писать все методы в одну строку?
+        На курсе Python этот навык у нас методично "взращивали" (до 80 символов позволяется писать в строке и все, что можно написать в одну строку - пишите в одну строку...), нужно было баланс найти между читабельностью и объемом кода. ИМХО читать так конечно менее удобно (быть может - дело привычки?).
+        */
+        let result = document.querySelector('div').classList.forEach(elem => {console.log(elem)});
+
     </script>
 </body>
 </html>

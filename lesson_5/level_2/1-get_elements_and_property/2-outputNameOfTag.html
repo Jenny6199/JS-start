@@ -17,7 +17,15 @@
     -->
 
     <script>
+        'use strict';
 
+        /* Cохраняем в переменную HTML коллекцию и перебираем ее в цикле.
+        функция noseName возвращает имя тэга в верхнем регистре */
+        let tags_with_one = document.getElementsByClassName('one');
+        for (let elem of tags_with_one){
+            console.log(elem.nodeName.toLocaleLowerCase());
+        }
+        
     </script>
 </body>
 </html>

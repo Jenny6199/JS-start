@@ -19,7 +19,19 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        let tags = document.querySelectorAll('b');
+        for (let elem of tags) {
+        /* Здесь инвертируем условие и если classList не содержит 
+        заданный класс - добавляем его в список).*/
+            if (!elem.classList.contains('sign')) {
+                elem.classList.add('sign');
+            }
+        };
+        // В результате все тэги получают заданный класс.
+        console.log(tags);
+
     </script>
 </body>
 </html>

@@ -13,5 +13,15 @@
     2. Затем обратитесь к списку классов и с помощью метода contains()
     проверьте есть ли класс hidden у этого тега.
      -->
+
+     <script>
+         'use strict';
+         
+         // Находим объект и сохраняем его в переменную.
+         let finded_div = document.querySelector('div');
+         // Обращаемся к classList и с помощью метода contains() проверяем наличие элемента в списке.
+         console.log(finded_div.classList.contains('hidden'));
+
+     </script>
 </body>
 </html>

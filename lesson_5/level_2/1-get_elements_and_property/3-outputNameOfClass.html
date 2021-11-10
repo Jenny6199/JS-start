@@ -18,7 +18,15 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        /* Как и в предыдущей задаче сохраняем в HTML-коллекцию
+        все объекты с тэгом h2, затем с помощью цикла выводим 
+        имя класса каждого тэга в консоль */ 
+        let h2_collections = document.getElementsByTagName('h2');
+        for (let elem of h2_collections){
+            console.log(elem.className);
+        }
     </script>
 </body>
 </html>
