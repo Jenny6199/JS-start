@@ -15,7 +15,7 @@
         'use strict';
 
         // Находим объект.
-        let title_tag = document.getElementsByTagName('title')[0];
+        let title_tag = document.querySelector('title');
         // Добавляем атрибуты с помощью setAttribute.
         title_tag.setAttribute("data-one", "один");
         title_tag.setAttribute("data-two", "два");
