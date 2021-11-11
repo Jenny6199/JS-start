@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Заголовок</h1>
+
+    <!-- Задание. Добавьте заголовку атрибут data-one="один" и атрибут
+    data-two="два" с помощью метода setAttribute. -->
+
+    <script>
+        'use strict';
+
+        // Находим объект.
+        let title_tag = document.querySelector('title');
+        // Добавляем атрибуты с помощью setAttribute.
+        title_tag.setAttribute("data-one", "один");
+        title_tag.setAttribute("data-two", "два");
+        // Выводим объект в консоль.
+        console.log(title_tag);
+
+        /* 
+        Вопрос. А так как ниже можно делать?
+        Этот метод "предложила" в IDE, в Developer.mozilla.org он не описан. Погуглил, нашел на другом сайте, попробовал-работает. 
+        По виду он сложнее - больше строк, плюс дополнительная переменная.
+        быть может он для каких то других случаев? или быть может архаизм?
+        */
+        let self_atribute = document.createAttribute("data-three");
+        self_atribute.value = "три";
+        title_tag.attributes.setNamedItem(self_atribute);
+        console.log(title_tag);
+
+    </script>
+</body>
+</html>

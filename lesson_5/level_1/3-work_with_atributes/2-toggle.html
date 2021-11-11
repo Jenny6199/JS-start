@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+    </ul>
+
+    <!-- Задание. Найдите элемент с классом .nav-link и используя метод toggle из свойства classList
+    у элемента, добавьте или уберите класс .active. -->
+    <script>
+        'use strict';
+
+        // Находим объект по селектору.
+        let finded_object = document.querySelector('.nav-link');
+        console.log(finded_object.className);
+        // У найденного объекта применяем метод toggle c указанием класса
+        finded_object.classList.toggle('active');
+        console.log(finded_object.className);
+        // При повторном использовании toggle (в случае отсутствия данного класса) класс вновь будет добавлен.
+        finded_object.classList.toggle('active');
+        console.log(finded_object.className);
+
+    </script>
+</body>
+</html>

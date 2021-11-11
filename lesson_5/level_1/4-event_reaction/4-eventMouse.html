@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Добавил размеры и границу, чтобы было его видно.-->
+    <textarea style="border: 1px solid black; width: 500px; height: 300px;"></textarea>
+
+    <!-- Задание. Сделайте, чтобы при наведении на textarea в консоли
+    появлялось сообщение: "вы навели на textarea" -->
+
+    <script>
+        'use strict';
+        let aim = document.getElementsByTagName('textarea')[0];
+        aim.addEventListener('mouseover', () => {
+            console.log('Вы навели на textarea.')
+        })
+
+        // Это - "на память"
+        aim.addEventListener('mouseout', () => {
+            alert('Вы более не в textarea.')
+        })
+    </script>
+</body>
+</html>

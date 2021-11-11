@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card hidden">
+        Lorem ipsum dolor sit.
+    </div>
+    <div class="card">
+        Lorem ipsum dolor sit.
+    </div>
+    <div class="card hidden">
+        Lorem ipsum dolor sit.
+    </div>
+    <div class="card">
+        Lorem ipsum dolor sit.
+    </div>
+
+    <!-- Задание.
+    1. Найдите все "карточки" с классом .card.
+    2. Проверьте есть ли у карточки класс hidden с помощью метода contains(),
+    и если есть, то удалите с помощью метода remove(). -->
+
+    <script>
+        'use strict';
+
+        // Сохраняем в переменной коллекцию со всеми карточками.
+        let cards = document.querySelectorAll('.card');
+        // Затем обращаемся к каждой из них,
+        cards.forEach(elem => {
+        // ...проверяя наличие hidden в classList
+            if (elem.classList.contains('hidden')) {
+                elem.classList.remove('hidden');
+            }
+        });
+        
+        // В результате у всех карточек удален класс hidden.
+        console.log(cards);
+
+    </script>
+</body>
+</html>

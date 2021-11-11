@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="menu"></div>
+
+    <!-- Задание. Добавьте в div с классом .menu следующую разметку:
+    <a href="#">link</a>
+    используя метод insertAdjacentHTML.
+    -->
+    <script>
+        'use strict';
+
+        // Находим объект.
+        let finded_div = document.querySelector('.menu');
+        // Вставка строки подготовленной как разметка HTML в найденный объект. 
+        finded_div.insertAdjacentHTML("afterbegin",'<a href="#">link</a>');
+        // При использовании данного метода нет необходимости предварительно создавать элемент, как при использовании innerHTML.
+
+    </script>
+</body>
+</html>
