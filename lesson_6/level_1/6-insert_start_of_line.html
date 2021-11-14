@@ -20,7 +20,13 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        // Создаем переменную в которую сохраняем коллекцию (все найденные input)
+        let all_inputs = document.querySelectorAll('input');
+        // Для каждого элемента с помощью forEach добавляем разметку после закрывающего тэга.
+        all_inputs.forEach(elem => elem.insertAdjacentHTML('afterend','</br>'));
+
     </script>
 </body>
 </html>

@@ -17,6 +17,14 @@
     padding. -->
 
     <script>
+        "use strict";
+
+        // Находим ссылку на коллекцию объектов
+        let blocks = document.getElementsByTagName('div');
+        for (let elem of blocks){
+            elem.style.padding = '10px';
+        }
+        console.log(blocks);
         
     </script>
 </body>
