@@ -46,10 +46,18 @@
     <script>
         'use strict';
 
+        // 1.
         let products = document.querySelectorAll('.product');
         for (let elem of products){
             elem.style.background = 'orange';
         }
+
+        // 2.
+        let productName = document.querySelectorAll('.productName');
+        productName.forEach(elem => {
+            elem.style.fontSize = '24px';
+        })
+
     </script>
 </body>
 </html>
