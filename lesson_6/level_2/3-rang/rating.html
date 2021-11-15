@@ -31,6 +31,8 @@
     -->
 
     <script>
+        'use strict';
+
         let firstStar = document.getElementById('first');
         let secondStar = document.getElementById('second');
         let thirdStar = document.getElementById('third');
@@ -38,16 +40,45 @@
         let fifthStar = document.getElementById('fifth');
 
         let goldenClass = 'golden';
+        
 
-        firstStar.addEventListener('mouseover', function() {
-            if (!firstStar.classList.contains('goldenClass')) {
-                firstStar.classList.add(goldenClass);
-            }
-        });
+        /**
+         * Функция назначает обработчик событий наведения и ухода из фокуса для индикатора рэйтинга и его предшественников.
+         * @param {object} elem - объект
+         */
+        function starLight(elem) {
+            // Для назначения класса.
+            elem.addEventListener('mouseover', () => {
+                if (!elem.classList.contains('goldenClass')) {
+                    elem.classList.add(goldenClass);
+                    let previous = elem.previousElementSibling
+                    while (previous) {
+                        previous.classList.add(goldenClass);
+                        previous = previous.previousElementSibling
+                    };
+                }
+            })
 
-        firstStar.addEventListener('mouseout', function() {
-            firstStar.classList.remove(goldenClass);
-        });
+            // Для удаления класса.
+            elem.addEventListener('mouseout', () => {
+                elem.classList.remove(goldenClass);
+                let previous = elem.previousElementSibling
+                while (previous) {
+                    previous.classList.remove(goldenClass);
+                    previous = previous.previousElementSibling
+                };
+        
+            })
+        }
+
+        /* Устанавливаем обработчики событий для каждого уровня рэйтинга
+        вызывая функцию starLight */
+        starLight(firstStar);
+        starLight(secondStar);
+        starLight(thirdStar);
+        starLight(fourthStar);
+        starLight(fifthStar);
+
     </script>
 </body>
 </html>

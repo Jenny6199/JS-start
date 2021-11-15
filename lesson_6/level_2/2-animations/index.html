@@ -23,7 +23,16 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        let btn = document.querySelector('button');
+        let msg = document.querySelector('.message');
+        btn.addEventListener('click', () => {
+            msg.style.display = 'block';
+            /* Спасибо за ссылку в link - там  покопавшись еще кучу других библиотек нашел, помимо анимированного css :) */
+            msg.classList.add('animate__animated');
+            msg.classList.add('animate__fadeInLeftBig');
+        })
     </script>
 </body>
 </html>
