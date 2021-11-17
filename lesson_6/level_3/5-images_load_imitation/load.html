@@ -41,7 +41,17 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        setTimeout(changeImage, 3000);
+
+        function changeImage() {
+            let images = document.querySelectorAll('img');
+            for (let i = 0; i < 4; i++){
+                images[i].setAttribute('src', `./images/${(i+1)}.jpg`);
+            }
+        }
+
     </script>
 </body>
 </html>

@@ -16,7 +16,7 @@
         <br>
         <input id="second" type="text"><br>
         <br>
-        <button>Отправить</button>
+        <button type='submit'>Отправить</button>
     </form>
 
     <!-- 
@@ -36,7 +36,38 @@
      -->
 
     <script>
-        
+       'use strict';
+       
+        let formEl = document.querySelector('form');
+        let input_1 = document.getElementById('first');
+        let input_2 = document.getElementById('second');
+        formEl.addEventListener('submit', testForm, true); 
+
+        /**
+         * Функция-обработчик события для формы
+         * Проверяет заполнение полей ввода пользователем.
+         * @param {event} - event событие
+         */
+        function testForm(event){
+            /**
+             * функция производит проверку заполнения отдельного поля ввода
+             * входящего в общую форму. В случае если поле не заполнено
+             * останавливает отправку формы и обеспечивает его индикацию.
+             * @param {obj} obj - ссылка на объект - поле ввода.
+             */
+            function test_input(obj){
+                if (obj.value == ''){
+                    obj.style.border = '2px solid red';
+                    obj.name = 'empty';
+                    obj.insertAdjacentHTML('afterend', '<label for="empty"> ! Заполните это поле</label>');
+                    event.preventDefault()
+                }
+            }
+
+            test_input(input_1);
+            test_input(input_2);
+        }
+
     </script>
 </body>
 </html>

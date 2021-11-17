@@ -44,10 +44,25 @@
     -->
 
     <script>
+        'use strict';
+
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(button =>{
+            button.addEventListener('click', closeClickHandler, true);
+        }) 
+        
+        /* Пришлось гуглить и разбираться у меня упорно не работало без третьего параметра
+        в addEventListener видимо из-за браузера.
+        Не стал переустанавливать, разобрался в параметрах функции, много интересного
+        для себя открыл. Здесь и далее (в ДЗ) решил просто добавить true в параметры, чтобы 
+        все заработало, ну и заодно продемонстрировать, что работал над этим.
+        Надеюсь не будет считаться ошибкой.
+        */
 
         function closeClickHandler(event) {
-           
+            event.currentTarget.parentNode.style.display = 'none';
         }
+
     </script>
 </body>
 
