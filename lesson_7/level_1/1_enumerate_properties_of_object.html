@@ -7,6 +7,8 @@
 </head>
 <body>
     <script>
+        'use strict';
+
         const products = {
             one: "один",
             two: "два",
@@ -18,6 +20,23 @@
         Используя цикл for in переберите объект products, ведите в консоль
         имя свойства, значение свойства.
         */
+
+        for (let obj_key in products){
+            console.log(obj_key, products[obj_key]);
+        }
+
+
+        // На память - Вариант (не соответствует ТЗ) через методы Object и цикл.
+        let p_keys = Object.keys(products);
+        let p_values = Object.values(products);
+        for (let i=0; i < p_keys.length; i++){
+            console.log(p_keys[i], ' = ', p_values[i]);
+        }
+
+        for (let [key, value] of Object.entries(products)){
+            console.log(`${key} - ${value}`);
+        }
+        
 
     </script>
 </body>
