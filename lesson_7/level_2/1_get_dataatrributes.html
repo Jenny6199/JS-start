@@ -20,6 +20,25 @@
     -->
 
     <script>
+        'use strict';
+
+
+
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', event => {
+                // 1-вариант 
+                console.log(event.target.dataset); // Будет выведен объект.
+                // 2-вариант
+                let trg_attr = event.target.getAttributeNames();
+                for (let elem of trg_attr){
+                    // Будет выведены строки "атрибут = значение".
+                    console.log(elem, ' = ', event.target.getAttribute(elem));
+                }
+            });
+        })
+
+
         
     </script>
 </body>
