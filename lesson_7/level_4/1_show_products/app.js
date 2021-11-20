@@ -10,6 +10,15 @@
 </div>
 */
 
+
+let aim_block = document.querySelector('.products');
+let buttons = document.querySelectorAll('button');
+let markup = null;
+
+buttons.forEach(button =>{
+    button.addEventListener('click', clickHandler, false);
+})
+
 const products = {
     phones: [
         {
@@ -82,10 +91,11 @@ const products = {
  */
 function clickHandler(event) {
     //вам нужно очищать содержимое .products
-    
+    aim_block.innerHTML =  '';
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
-    
+    let product_type = event.target.dataset.type;
+    showCategory(product_type);
 }
 
 /**
@@ -96,18 +106,32 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    let choosed_category_items = products[category];
+    choosed_category_items.forEach(item =>{
+        aim_block.innerHTML += getProductMarkup(item);
+    })
 }
+
+
+/* В комментариях к следующей функции было нагромождение параметров
+передаваемого объекта. Вместо этого я передаю в функцию объект,
+а к параметрам обращаюсь с помощью шаблонного литерала.
+Надеюсь это не будет считаться отступлением от ТЗ.
+*/
 
 /**
- * @param {Object} product объект из массива phones, tablets или tv.
- * @param {number} product.id id продукта
- * @param {string} product.name название продукта
- * @param {string} product.price цена продукта
- * @param {string} product.imageUrl путь до картинки товара
- * @returns {string} html-разметка для товара по аналогии из комментария
- * в верху этого файла.
+ * Функция обеспечивает добавление разметки с карточкой товара на страницу.
+ * @param {Object} product объект со сведениями о продукте.
  */
 function getProductMarkup(product) {
-
+    let markup = `
+        <div class = "product">
+            <div>${product.name}</div>
+            <img src="${product.imageUrl}" alt="img_not_found">
+            <div>${product.price}</div>
+            <a href="${product.id}">Подробнее</a>
+        </div>   `
+    return markup
 }
+
+// Протестировано - всё работает :)

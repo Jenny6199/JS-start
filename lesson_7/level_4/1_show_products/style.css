@@ -1,9 +1,22 @@
 .products {
     overflow: hidden;
     margin-top: 40px;
+    padding:20px;
 }
 
 .product {
+    padding: 10px;
     float: left;
     margin-right: 20px;
+    border: 1px solid rgb(48, 44, 44);
+    box-shadow: -2px -2px 25px black;
+    opacity: 0.6;
+}
+
+
+/* Несколько стилизовал вывод */
+
+.product:hover {
+    opacity: 1.0;
+    box-shadow: -2px -2px 25px yellow;
 }
