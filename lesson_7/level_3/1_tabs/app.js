@@ -12,6 +12,11 @@ const texts = {
     обработчик клика функцию clickHandler.
 */
 
+let text_block = document.querySelector('.text');
+let links = document.querySelectorAll('.nav-link');
+links.forEach(elem => {
+    elem.addEventListener('click', clickHandler, false);
+})
 
 /**
  * Обработчик клика по .nav-link
@@ -20,7 +25,8 @@ const texts = {
 function clickHandler(event) {
     // здесь вызывайте changeText и changeActiveClass, и передавайте
     // им объект события.
-   
+    changeActiveClass(event);
+    changeText(event);
 }
 
 /**
@@ -29,7 +35,10 @@ function clickHandler(event) {
  * @param {MouseEvent} event 
  */
 function changeActiveClass(event) {
-    
+    links.forEach(link_pos =>{
+        link_pos.classList.remove('active');
+    })
+    event.target.classList.add('active');
 }
 
 /**
@@ -39,5 +48,20 @@ function changeActiveClass(event) {
  * @param {MouseEvent} event 
  */
 function changeText(event) {
-    
-}
+    let aim_text = event.target.textContent;
+    // Решил реализовать через switch, так как количество значений известно.
+    switch (aim_text) {
+        case "Link 1":
+            text_block.textContent = texts.text1;
+            break;
+        case "Link 2":
+            text_block.textContent = texts.text2;
+            break;
+        case "Link 3":
+            text_block.textContent = texts.text3;
+            break;
+        default:
+            // На всякий случай
+            text_block.textContent = 'Text not found :(';
+    }
+    }

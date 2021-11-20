@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Position_and_sound</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,7 +26,26 @@
     -->
 
     <script>
+        'use strict';
+
+        // Получение ссылок на кнопку и целевой блок
+        let aim_button = document.querySelector('button');
+        let message = document.querySelector('.message');
+        // Получение ссылки на аудио-контент.
+        let note = new Audio('notification.mp3');
+        // Назначение отслеживания события (по клику "мыши")
+        aim_button.addEventListener('click', listenClick, false);
         
+        /**
+         * Функция изменяет положение сообщения и обеспечивает его звуковое сопровождение
+         * @param {Mouseevent} event
+        */
+        function listenClick(event){
+            // Добавление свойства в стили - перемещение на заданное количество значений (px, vh, in)
+            message.style.transform = 'translate(25vh, -100vh)';
+            // Звуковое сопровождение
+            note.play();            
+        }
     </script>
 </body>
 
