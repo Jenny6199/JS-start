@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FontSize</title>
 </head>
 <body>
     <input type="range" min="20" max="100">
@@ -22,7 +22,17 @@
     
 
     <script>
-        
+        'use stirct';
+
+        // Ссылка на "ползунок"
+        let ranger = document.querySelector('input');
+        // Ссылка на целевой блок
+        let aim_block = document.querySelector('div');
+        // Отслеживание события на "ползунке" с изменением размера текста в целевом блоке.
+        ranger.addEventListener('input', function(event) {
+            // нужен "px" чтобы заработало :)
+            aim_block.style.fontSize = `${event.target.value}px`;
+        })
     </script>
 </body>
 </html>
