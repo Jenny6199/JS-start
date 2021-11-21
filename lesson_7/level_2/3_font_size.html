@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontSize</title>
+</head>
+<body>
+    <input type="range" min="20" max="100">
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, expedita.
+    </div>
+    
+    <!-- 
+    Задание. Нужно чтобы при смещении ползунка в div менялся размер шрифта.
+    1. Получите ссылку на input.
+    2. Получите ссылку на div.
+    3. Input'у поставьте прослушивание события 'input';
+        3.1 У функции-обработчика определите параметр event.
+        3.2 Значение input'а читайте из event.target.value.
+    -->
+    
+
+    <script>
+        'use stirct';
+
+        // Ссылка на "ползунок"
+        let ranger = document.querySelector('input');
+        // Ссылка на целевой блок
+        let aim_block = document.querySelector('div');
+        // Отслеживание события на "ползунке" с изменением размера текста в целевом блоке.
+        ranger.addEventListener('input', function(event) {
+            // нужен "px" чтобы заработало :)
+            aim_block.style.fontSize = `${event.target.value}px`;
+        })
+    </script>
+</body>
+</html>
