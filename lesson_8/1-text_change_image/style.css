@@ -12,6 +12,17 @@ body {
     width: 150px;
 }
 
+.desc {
+    width: 100%;
+    min-height: 150px;;
+    font-size: 12px;
+    align-content: center;
+    background-color:darkkhaki;
+    padding: 16px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
 img {
     display: block;
 }
